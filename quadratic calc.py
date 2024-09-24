@@ -17,6 +17,17 @@ def quadratic_calculator():
         if c_coeff>0:
             the_c_symbol='+'
         
+        # Checks if a is equal to zero, if so then it solves as a linear equation
+        if a_coeff == 0:
+            print(f"{b_coeff}x {the_c_symbol} {c_coeff}")
+            if c_coeff != 0:
+                t_result = (c_coeff * -1)/b_coeff
+                print(f'x = {t_result}')
+                return
+            else:
+                print('x = 0')
+                return
+        
         # Shows the user the equation in quadratic form
         print(f"{a_coeff}x² {the_b_symbol} {b_coeff}x {the_c_symbol} {c_coeff}")
         
@@ -36,3 +47,5 @@ def quadratic_calculator():
         else:
             print(f"x = {root} or {other_root}")
             return
+        
+quadratic_calculator()
